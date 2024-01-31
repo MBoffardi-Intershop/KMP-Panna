@@ -223,16 +223,24 @@ struct ContentView: View {
                     
                     Text("Temperature \(Int(info.currentTemp))°").controlSize(.extraLarge).font(.title)
                     
-                    VStack(spacing: 5.0) {
-                        LabeledContent("Igniter", value: (info.igniterOn ? "ON" : "OFF"))
-                        LabeledContent("Pellet Loader", value: String(info.pelletLoader) + "%")
-                        LabeledContent("Flame fan", value: String(info.flameFan) + "%")
-                        LabeledContent("Exhaust Pressure", value: String(info.xhaustPressure) + " P")
-                        Gauge(value: info.flame, in: 0...999) {
-                            Text("Flame")
-                        } currentValueLabel: {
-                            Text("\(Int(info.flame))")
-                        }
+                    if (info.status == STATUS_LOADING) ||
+                        (info.status == STATUS_WARMUP) ||
+                        (info.status == STATUS_IGNITION) ||
+                        (info.status == STATUS_HIGHEFFECT) ||
+                        (info.status == STATUS_COOLDOWN) {
+
+                        VStack(spacing: 5.0) {
+                            LabeledContent("Igniter", value: (info.igniterOn ? "ON" : "OFF"))
+                            LabeledContent("Pellet Loader", value: String(info.pelletLoader) + "%")
+                            LabeledContent("Flame fan", value: String(info.flameFan) + "%")
+                            LabeledContent("Exhaust Pressure", value: String(info.xhaustPressure) + " P")
+                            Gauge(value: info.flame, in: 0...999) {
+                                Text("Flame")
+                            } currentValueLabel: {
+                                Text("\(Int(info.flame))")
+                            }
+                            
+                        }  // End if that shows burner info only when burner is on
                         
                     }
                     

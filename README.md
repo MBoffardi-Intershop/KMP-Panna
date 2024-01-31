@@ -10,14 +10,13 @@ Also, it is not pushed to AppStore now, and it shuld be pushed to an iPhone in D
 
 ## todo list:
 
-- Icon
-- Show burner info only when is on
 - Proper URL Configuration
 - Show time to next requestTimer
-- fix size of "Loading" icon
 - Adjust Application scaling/border
 - Support for Night theme
 - Add Manual refresh button?
 - Test when the burner is in Error Status
 - Notifications
 - Submit to AppStore
+- Support to Localization
+
