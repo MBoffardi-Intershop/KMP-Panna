@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		924DCF482B6A9C0700C0BDFD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924DCF472B6A9C0700C0BDFD /* Constants.swift */; };
 		9286BE622B68E31D00CFD616 /* KMP_PannaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9286BE612B68E31D00CFD616 /* KMP_PannaApp.swift */; };
 		9286BE642B68E31D00CFD616 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9286BE632B68E31D00CFD616 /* ContentView.swift */; };
 		9286BE662B68E31F00CFD616 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9286BE652B68E31F00CFD616 /* Assets.xcassets */; };
@@ -15,6 +16,8 @@
 		9286BE7D2B68E32000CFD616 /* KMP_PannaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9286BE7C2B68E32000CFD616 /* KMP_PannaUITests.swift */; };
 		9286BE7F2B68E32000CFD616 /* KMP_PannaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9286BE7E2B68E32000CFD616 /* KMP_PannaUITestsLaunchTests.swift */; };
 		92DF30CC2B6A885D0074297F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 92DF30CB2B6A885D0074297F /* README.md */; };
+		92DF30CE2B6A8E720074297F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DF30CD2B6A8E720074297F /* SettingsView.swift */; };
+		92DF30D02B6A9A950074297F /* KMPUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DF30CF2B6A9A950074297F /* KMPUtilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		924DCF472B6A9C0700C0BDFD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9286BE5E2B68E31D00CFD616 /* KMP-Panna.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KMP-Panna.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9286BE612B68E31D00CFD616 /* KMP_PannaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMP_PannaApp.swift; sourceTree = "<group>"; };
 		9286BE632B68E31D00CFD616 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -46,6 +50,8 @@
 		9286BE7C2B68E32000CFD616 /* KMP_PannaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMP_PannaUITests.swift; sourceTree = "<group>"; };
 		9286BE7E2B68E32000CFD616 /* KMP_PannaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMP_PannaUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		92DF30CB2B6A885D0074297F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		92DF30CD2B6A8E720074297F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		92DF30CF2B6A9A950074297F /* KMPUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMPUtilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +79,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		924DCF462B6A9BBE00C0BDFD /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				924DCF472B6A9C0700C0BDFD /* Constants.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
 		9286BE552B68E31D00CFD616 = {
 			isa = PBXGroup;
 			children = (
@@ -97,8 +111,11 @@
 		9286BE602B68E31D00CFD616 /* KMP Panna */ = {
 			isa = PBXGroup;
 			children = (
+				924DCF462B6A9BBE00C0BDFD /* Config */,
 				9286BE612B68E31D00CFD616 /* KMP_PannaApp.swift */,
 				9286BE632B68E31D00CFD616 /* ContentView.swift */,
+				92DF30CD2B6A8E720074297F /* SettingsView.swift */,
+				92DF30CF2B6A9A950074297F /* KMPUtilities.swift */,
 				9286BE652B68E31F00CFD616 /* Assets.xcassets */,
 				9286BE672B68E31F00CFD616 /* Preview Content */,
 			);
@@ -261,6 +278,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				924DCF482B6A9C0700C0BDFD /* Constants.swift in Sources */,
+				92DF30CE2B6A8E720074297F /* SettingsView.swift in Sources */,
+				92DF30D02B6A9A950074297F /* KMPUtilities.swift in Sources */,
 				9286BE642B68E31D00CFD616 /* ContentView.swift in Sources */,
 				9286BE622B68E31D00CFD616 /* KMP_PannaApp.swift in Sources */,
 			);
