@@ -1,0 +1,603 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9286BE622B68E31D00CFD616 /* KMP_PannaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9286BE612B68E31D00CFD616 /* KMP_PannaApp.swift */; };
+		9286BE642B68E31D00CFD616 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9286BE632B68E31D00CFD616 /* ContentView.swift */; };
+		9286BE662B68E31F00CFD616 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9286BE652B68E31F00CFD616 /* Assets.xcassets */; };
+		9286BE692B68E31F00CFD616 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9286BE682B68E31F00CFD616 /* Preview Assets.xcassets */; };
+		9286BE732B68E32000CFD616 /* KMP_PannaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9286BE722B68E32000CFD616 /* KMP_PannaTests.swift */; };
+		9286BE7D2B68E32000CFD616 /* KMP_PannaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9286BE7C2B68E32000CFD616 /* KMP_PannaUITests.swift */; };
+		9286BE7F2B68E32000CFD616 /* KMP_PannaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9286BE7E2B68E32000CFD616 /* KMP_PannaUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9286BE6F2B68E32000CFD616 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9286BE562B68E31D00CFD616 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9286BE5D2B68E31D00CFD616;
+			remoteInfo = "KMP Panna";
+		};
+		9286BE792B68E32000CFD616 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9286BE562B68E31D00CFD616 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9286BE5D2B68E31D00CFD616;
+			remoteInfo = "KMP Panna";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9286BE5E2B68E31D00CFD616 /* KMP-Panna.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KMP-Panna.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9286BE612B68E31D00CFD616 /* KMP_PannaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMP_PannaApp.swift; sourceTree = "<group>"; };
+		9286BE632B68E31D00CFD616 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9286BE652B68E31F00CFD616 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9286BE682B68E31F00CFD616 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9286BE6E2B68E32000CFD616 /* KMP-PannaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "KMP-PannaTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9286BE722B68E32000CFD616 /* KMP_PannaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMP_PannaTests.swift; sourceTree = "<group>"; };
+		9286BE782B68E32000CFD616 /* KMP-PannaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "KMP-PannaUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9286BE7C2B68E32000CFD616 /* KMP_PannaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMP_PannaUITests.swift; sourceTree = "<group>"; };
+		9286BE7E2B68E32000CFD616 /* KMP_PannaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMP_PannaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9286BE5B2B68E31D00CFD616 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9286BE6B2B68E32000CFD616 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9286BE752B68E32000CFD616 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9286BE552B68E31D00CFD616 = {
+			isa = PBXGroup;
+			children = (
+				9286BE602B68E31D00CFD616 /* KMP Panna */,
+				9286BE712B68E32000CFD616 /* KMP PannaTests */,
+				9286BE7B2B68E32000CFD616 /* KMP PannaUITests */,
+				9286BE5F2B68E31D00CFD616 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9286BE5F2B68E31D00CFD616 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9286BE5E2B68E31D00CFD616 /* KMP-Panna.app */,
+				9286BE6E2B68E32000CFD616 /* KMP-PannaTests.xctest */,
+				9286BE782B68E32000CFD616 /* KMP-PannaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9286BE602B68E31D00CFD616 /* KMP Panna */ = {
+			isa = PBXGroup;
+			children = (
+				9286BE612B68E31D00CFD616 /* KMP_PannaApp.swift */,
+				9286BE632B68E31D00CFD616 /* ContentView.swift */,
+				9286BE652B68E31F00CFD616 /* Assets.xcassets */,
+				9286BE672B68E31F00CFD616 /* Preview Content */,
+			);
+			path = "KMP Panna";
+			sourceTree = "<group>";
+		};
+		9286BE672B68E31F00CFD616 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				9286BE682B68E31F00CFD616 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9286BE712B68E32000CFD616 /* KMP PannaTests */ = {
+			isa = PBXGroup;
+			children = (
+				9286BE722B68E32000CFD616 /* KMP_PannaTests.swift */,
+			);
+			path = "KMP PannaTests";
+			sourceTree = "<group>";
+		};
+		9286BE7B2B68E32000CFD616 /* KMP PannaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9286BE7C2B68E32000CFD616 /* KMP_PannaUITests.swift */,
+				9286BE7E2B68E32000CFD616 /* KMP_PannaUITestsLaunchTests.swift */,
+			);
+			path = "KMP PannaUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9286BE5D2B68E31D00CFD616 /* KMP-Panna */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9286BE822B68E32000CFD616 /* Build configuration list for PBXNativeTarget "KMP-Panna" */;
+			buildPhases = (
+				9286BE5A2B68E31D00CFD616 /* Sources */,
+				9286BE5B2B68E31D00CFD616 /* Frameworks */,
+				9286BE5C2B68E31D00CFD616 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "KMP-Panna";
+			productName = "KMP Panna";
+			productReference = 9286BE5E2B68E31D00CFD616 /* KMP-Panna.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9286BE6D2B68E32000CFD616 /* KMP-PannaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9286BE852B68E32000CFD616 /* Build configuration list for PBXNativeTarget "KMP-PannaTests" */;
+			buildPhases = (
+				9286BE6A2B68E32000CFD616 /* Sources */,
+				9286BE6B2B68E32000CFD616 /* Frameworks */,
+				9286BE6C2B68E32000CFD616 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9286BE702B68E32000CFD616 /* PBXTargetDependency */,
+			);
+			name = "KMP-PannaTests";
+			productName = "KMP PannaTests";
+			productReference = 9286BE6E2B68E32000CFD616 /* KMP-PannaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9286BE772B68E32000CFD616 /* KMP-PannaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9286BE882B68E32000CFD616 /* Build configuration list for PBXNativeTarget "KMP-PannaUITests" */;
+			buildPhases = (
+				9286BE742B68E32000CFD616 /* Sources */,
+				9286BE752B68E32000CFD616 /* Frameworks */,
+				9286BE762B68E32000CFD616 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9286BE7A2B68E32000CFD616 /* PBXTargetDependency */,
+			);
+			name = "KMP-PannaUITests";
+			productName = "KMP PannaUITests";
+			productReference = 9286BE782B68E32000CFD616 /* KMP-PannaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9286BE562B68E31D00CFD616 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					9286BE5D2B68E31D00CFD616 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					9286BE6D2B68E32000CFD616 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 9286BE5D2B68E31D00CFD616;
+					};
+					9286BE772B68E32000CFD616 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 9286BE5D2B68E31D00CFD616;
+					};
+				};
+			};
+			buildConfigurationList = 9286BE592B68E31D00CFD616 /* Build configuration list for PBXProject "KMP-Panna" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9286BE552B68E31D00CFD616;
+			productRefGroup = 9286BE5F2B68E31D00CFD616 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9286BE5D2B68E31D00CFD616 /* KMP-Panna */,
+				9286BE6D2B68E32000CFD616 /* KMP-PannaTests */,
+				9286BE772B68E32000CFD616 /* KMP-PannaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9286BE5C2B68E31D00CFD616 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9286BE692B68E31F00CFD616 /* Preview Assets.xcassets in Resources */,
+				9286BE662B68E31F00CFD616 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9286BE6C2B68E32000CFD616 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9286BE762B68E32000CFD616 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9286BE5A2B68E31D00CFD616 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9286BE642B68E31D00CFD616 /* ContentView.swift in Sources */,
+				9286BE622B68E31D00CFD616 /* KMP_PannaApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9286BE6A2B68E32000CFD616 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9286BE732B68E32000CFD616 /* KMP_PannaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9286BE742B68E32000CFD616 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9286BE7F2B68E32000CFD616 /* KMP_PannaUITestsLaunchTests.swift in Sources */,
+				9286BE7D2B68E32000CFD616 /* KMP_PannaUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9286BE702B68E32000CFD616 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9286BE5D2B68E31D00CFD616 /* KMP-Panna */;
+			targetProxy = 9286BE6F2B68E32000CFD616 /* PBXContainerItemProxy */;
+		};
+		9286BE7A2B68E32000CFD616 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9286BE5D2B68E31D00CFD616 /* KMP-Panna */;
+			targetProxy = 9286BE792B68E32000CFD616 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		9286BE802B68E32000CFD616 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9286BE812B68E32000CFD616 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9286BE832B68E32000CFD616 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"KMP Panna/Preview Content\"";
+				DEVELOPMENT_TEAM = 2ZD45SUXLQ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "KMP Panna";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = NO;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "bcc.KMP-Panna";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		9286BE842B68E32000CFD616 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"KMP Panna/Preview Content\"";
+				DEVELOPMENT_TEAM = 2ZD45SUXLQ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "KMP Panna";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = NO;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "bcc.KMP-Panna";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		9286BE862B68E32000CFD616 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2ZD45SUXLQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "bcc.KMP-PannaTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KMP-Panna.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/KMP-Panna";
+			};
+			name = Debug;
+		};
+		9286BE872B68E32000CFD616 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2ZD45SUXLQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "bcc.KMP-PannaTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KMP-Panna.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/KMP-Panna";
+			};
+			name = Release;
+		};
+		9286BE892B68E32000CFD616 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2ZD45SUXLQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "bcc.KMP-PannaUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "KMP Panna";
+			};
+			name = Debug;
+		};
+		9286BE8A2B68E32000CFD616 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2ZD45SUXLQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "bcc.KMP-PannaUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "KMP Panna";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9286BE592B68E31D00CFD616 /* Build configuration list for PBXProject "KMP-Panna" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9286BE802B68E32000CFD616 /* Debug */,
+				9286BE812B68E32000CFD616 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9286BE822B68E32000CFD616 /* Build configuration list for PBXNativeTarget "KMP-Panna" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9286BE832B68E32000CFD616 /* Debug */,
+				9286BE842B68E32000CFD616 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9286BE852B68E32000CFD616 /* Build configuration list for PBXNativeTarget "KMP-PannaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9286BE862B68E32000CFD616 /* Debug */,
+				9286BE872B68E32000CFD616 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9286BE882B68E32000CFD616 /* Build configuration list for PBXNativeTarget "KMP-PannaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9286BE892B68E32000CFD616 /* Debug */,
+				9286BE8A2B68E32000CFD616 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9286BE562B68E31D00CFD616 /* Project object */;
+}
