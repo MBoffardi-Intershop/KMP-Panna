@@ -213,7 +213,6 @@ struct ContentView: View {
                     }
                     
                     Gauge(value: info.currentTemp, in: info.startTemp...info.stopTemp) {
-                        Text("Temperature (°C)")
                     } currentValueLabel: {
                         
                     } minimumValueLabel: {
@@ -222,7 +221,7 @@ struct ContentView: View {
                         Text("\(Int(info.stopTemp))")
                     }
                     
-                    Text("\(Int(info.currentTemp))°").controlSize(.extraLarge).font(.title)
+                    Text("Temperature \(Int(info.currentTemp))°").controlSize(.extraLarge).font(.title)
                     
                     VStack(spacing: 5.0) {
                         LabeledContent("Igniter", value: (info.igniterOn ? "ON" : "OFF"))
