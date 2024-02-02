@@ -15,6 +15,8 @@
 		9286BE732B68E32000CFD616 /* KMP_PannaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9286BE722B68E32000CFD616 /* KMP_PannaTests.swift */; };
 		9286BE7D2B68E32000CFD616 /* KMP_PannaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9286BE7C2B68E32000CFD616 /* KMP_PannaUITests.swift */; };
 		9286BE7F2B68E32000CFD616 /* KMP_PannaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9286BE7E2B68E32000CFD616 /* KMP_PannaUITestsLaunchTests.swift */; };
+		9292C7C12B6D1D4C00086398 /* MonitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9292C7C02B6D1D4C00086398 /* MonitorView.swift */; };
+		9292C7C32B6D263200086398 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9292C7C22B6D263200086398 /* Launch Screen.storyboard */; };
 		92DF30CC2B6A885D0074297F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 92DF30CB2B6A885D0074297F /* README.md */; };
 		92DF30CE2B6A8E720074297F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DF30CD2B6A8E720074297F /* SettingsView.swift */; };
 		92DF30D02B6A9A950074297F /* KMPUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DF30CF2B6A9A950074297F /* KMPUtilities.swift */; };
@@ -49,6 +51,8 @@
 		9286BE782B68E32000CFD616 /* KMP-PannaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "KMP-PannaUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9286BE7C2B68E32000CFD616 /* KMP_PannaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMP_PannaUITests.swift; sourceTree = "<group>"; };
 		9286BE7E2B68E32000CFD616 /* KMP_PannaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMP_PannaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9292C7C02B6D1D4C00086398 /* MonitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorView.swift; sourceTree = "<group>"; };
+		9292C7C22B6D263200086398 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		92DF30CB2B6A885D0074297F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		92DF30CD2B6A8E720074297F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		92DF30CF2B6A9A950074297F /* KMPUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMPUtilities.swift; sourceTree = "<group>"; };
@@ -90,6 +94,7 @@
 		9286BE552B68E31D00CFD616 = {
 			isa = PBXGroup;
 			children = (
+				9292C7C22B6D263200086398 /* Launch Screen.storyboard */,
 				92DF30CB2B6A885D0074297F /* README.md */,
 				9286BE602B68E31D00CFD616 /* KMP Panna */,
 				9286BE712B68E32000CFD616 /* KMP PannaTests */,
@@ -114,6 +119,7 @@
 				924DCF462B6A9BBE00C0BDFD /* Config */,
 				9286BE612B68E31D00CFD616 /* KMP_PannaApp.swift */,
 				9286BE632B68E31D00CFD616 /* ContentView.swift */,
+				9292C7C02B6D1D4C00086398 /* MonitorView.swift */,
 				92DF30CD2B6A8E720074297F /* SettingsView.swift */,
 				92DF30CF2B6A9A950074297F /* KMPUtilities.swift */,
 				9286BE652B68E31F00CFD616 /* Assets.xcassets */,
@@ -253,6 +259,7 @@
 			files = (
 				92DF30CC2B6A885D0074297F /* README.md in Resources */,
 				9286BE692B68E31F00CFD616 /* Preview Assets.xcassets in Resources */,
+				9292C7C32B6D263200086398 /* Launch Screen.storyboard in Resources */,
 				9286BE662B68E31F00CFD616 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,6 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				924DCF482B6A9C0700C0BDFD /* Constants.swift in Sources */,
+				9292C7C12B6D1D4C00086398 /* MonitorView.swift in Sources */,
 				92DF30CE2B6A8E720074297F /* SettingsView.swift in Sources */,
 				92DF30D02B6A9A950074297F /* KMPUtilities.swift in Sources */,
 				9286BE642B68E31D00CFD616 /* ContentView.swift in Sources */,
@@ -455,7 +463,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = NO;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -489,7 +497,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = NO;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

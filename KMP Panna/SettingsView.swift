@@ -45,14 +45,6 @@ struct SettingsView: View {
                          .foregroundColor(isRefreshEditing ? .red : .blue)
                 }
                 
-                
-                Button {
-                        print ("savebutton")
-                } label: {
-                        Text("Save")
-                        .frame(maxWidth: .infinity)
-                } .buttonStyle(.borderedProminent)
-                
             }
             .navigationTitle("Settings")
         }
