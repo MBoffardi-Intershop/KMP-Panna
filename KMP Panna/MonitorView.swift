@@ -65,7 +65,7 @@ struct MonitorView: View {
                             LabeledContent("Igniter", value: (info.igniterOn ? "ON" : "OFF"))
                             LabeledContent("Pellet Loader", value: "\(info.pelletLoader)%")
                             LabeledContent("Flame fan", value: "\(info.flameFan)%")
-                            LabeledContent("Exhaust Pressure", value: "{\(info.xhaustPressure) P")
+                            LabeledContent("Exhaust Pressure", value: "\(info.xhaustPressure) P")
                             Gauge(value: info.flame, in: 0...999) {
                                 Text("Flame")
                             } currentValueLabel: {
