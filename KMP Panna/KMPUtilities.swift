@@ -93,9 +93,10 @@ enum ConnectionError: Error {
     case noValidJSON
 }
 
+
+
 class KMPBurnerModel: ObservableObject {
     @Published var kmpData: KMPData?
-    
     var isFetchingData = false
     
     // Maps JSON values into ready to use and understandabe values
@@ -217,5 +218,9 @@ class KMPBurnerModel: ObservableObject {
         }
         return true
 
+    }
+    
+    func resetFetchingStatus() {
+        isFetchingData = false
     }
 }

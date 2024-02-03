@@ -99,6 +99,13 @@ struct MonitorView: View {
             }
             
         }
+        .refreshable {
+            print ("Manual Refresh")
+            // forces a new request
+            viewModel.resetFetchingStatus()
+            viewModel.fetchKMPData()
+        }
+        
     }  // enf of view
         
     

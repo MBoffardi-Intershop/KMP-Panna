@@ -20,6 +20,6 @@ enum STATUS {
 
 enum DEFAULTS {
     static let BURNER_IP = "10.0.0.35"
-    static let REFRESH: Double = 4
+    static let REFRESH: Double = 10
     static let HTTPTIMEOUT: Double = 30
 }
