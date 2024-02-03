@@ -8,13 +8,6 @@
 
 import Foundation
 
-/**
- func getBurnerUXURL: URL () {
- return new
- }
- 
- */
-
 // Model for KMP JSON Data
 // HAS to be exactly as KMP returns it
 struct KMPData: Codable {
@@ -67,18 +60,162 @@ struct Info {
     var isInError: Bool    = false      // Panna is in error state
     var errorMessage1: String = ""      // First line of error message
     var errorMessage2: String = ""      // Second line of error
+    var showDetails: Bool {
+        (self.status == STATUS.LOADING) ||
+        (self.status == STATUS.WARMUP) ||
+        (self.status == STATUS.IGNITION) ||
+        (self.status == STATUS.HIGHEFFECT) ||
+        (self.status == STATUS.COOLDOWN)
+    }
 }
 
 
-func getJSONURL() -> URL {
+func getJSONURL(host: String? = nil) -> URL {
     // todo, use configuration values here
     // use also some error catching instead of retuning empty
-    let jsonURL = URL(string: "http://" + DEFAULTS.BURNER_IP + "/data.html")!
+    var _host = host
+    if (host == nil) {
+        _host = DEFAULTS.BURNER_IP
+    }
+    let jsonURL = URL(string: "http://\(_host!)/data.html")!
     return jsonURL
 }
 
 // Used in the test button in settings
 func getKMPUXURL(host: String) -> URL {
-    let kmpUxURL = URL(string: "http://" + host + "/")!
+    let kmpUxURL = URL(string: "http://\(host)/")!
     return kmpUxURL
+}
+
+enum ConnectionError: Error {
+    case invalidHost
+    case noConnection
+    case noValidJSON
+}
+
+class KMPBurnerModel: ObservableObject {
+    @Published var kmpData: KMPData?
+    
+    var isFetchingData = false
+    
+    // Maps JSON values into ready to use and understandabe values
+    func decodeInfo(kmp: KMPData) ->Info {
+        
+        var info = Info(timestamp: Date())
+        
+        // Status image and description
+        info.isInError = false
+        switch kmp.mode2 {
+        case "0":
+            info.status = STATUS.OFF
+            info.statusDesc = "Online, but OFF"
+        case "2":
+            info.status = STATUS.STANDBY
+            info.statusDesc = "Standby"
+        case "3":
+            info.status = STATUS.LOADING
+            info.statusDesc = "Loading pellets"
+        case "4":
+            info.status = STATUS.IGNITION
+            info.statusDesc = "Igniting"
+        case "5":
+            info.status = STATUS.WARMUP
+            info.statusDesc = "Warming up"
+        case "8":
+            info.status = STATUS.HIGHEFFECT
+            info.statusDesc = "Burning with high effect"
+        case "9","10":
+            info.status = STATUS.COOLDOWN
+            info.statusDesc = "Cooling down"
+        default:
+            info.status = STATUS.ERROR
+            info.statusDesc = "\(kmp.alarm1)\n\(kmp.alarm2)"
+            info.isInError = true
+        }
+
+        info.currentTemp = Double(kmp.ttop) ?? -1
+        // KMP bug: pressure does not handle negative values
+        let pressure = Int(kmp.draft) ?? 0
+        if pressure > 32768 {
+            info.xhaustPressure = 65534 - pressure
+        } else {
+            info.xhaustPressure = pressure
+        }
+        info.flame = Double(kmp.tFlame) ?? -1
+        info.flameFan = Int(kmp.cFan) ?? 0
+        info.igniterOn = !kmp.glow.starts(with: "AV") // ON if does not START with AVSTÄNGT
+        info.pelletLoader = Int(kmp.feed) ?? -1
+        info.startTemp = Double(kmp.tStart) ?? 0
+        info.stopTemp = Double(kmp.tStop) ?? 0
+        
+        return info
+    }
+    
+    // Get the JSON from the provided host.
+    func fetchKMPData() {
+        let pannaURL = getJSONURL()
+        print("Recovering data from \(pannaURL)")
+        
+        // Check if already fetching data
+        guard !isFetchingData else {
+            print("Skipping, there is already a request pending.")
+            return }
+        
+        isFetchingData = true
+        
+        let urlSession = URLSession(configuration: .default)
+        
+        let dataTask = urlSession.dataTask(with: pannaURL) { data, response, error in
+            guard let data = data else {
+                return
+            }
+            
+            do {
+                if let jsonString = String(data: data, encoding: .utf8) {
+                    print("Raw JSON Data: \(jsonString)")
+                }
+                print ("now decoding")
+                let decoder = JSONDecoder()
+                let kmpData = try decoder.decode(KMPData.self, from: data)
+                DispatchQueue.main.async {
+                    self.kmpData = kmpData
+                }
+            } catch {
+                print("Error decoding JSON: \(error)")
+            }
+            
+            self.isFetchingData = false
+        }
+        
+        dataTask.resume()
+        urlSession.configuration.timeoutIntervalForRequest = DEFAULTS.HTTPTIMEOUT
+        urlSession.configuration.timeoutIntervalForResource = DEFAULTS.HTTPTIMEOUT
+    }
+    
+    // tries to get and decde JSON from provided host, true if connection works, false otherwise
+    func testKMPConnection (host: String) throws -> Bool {
+        let decoder = JSONDecoder()
+        var pannaURL = getJSONURL(host: host)
+        var data: Data
+        
+        do {
+            pannaURL = getJSONURL(host: host)
+        } catch {
+            throw ConnectionError.invalidHost
+        }
+        
+        do {
+            data = try Data(contentsOf: pannaURL)
+        } catch {
+            throw ConnectionError.noConnection
+        }
+        
+        do {
+            let json = try decoder.decode(KMPData.self, from: data)
+        } catch {
+            throw ConnectionError.noValidJSON
+        }
+        return true
+
+    }
 }

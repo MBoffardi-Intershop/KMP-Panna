@@ -11,7 +11,9 @@ struct SettingsView: View {
     @State public var cfg_burnerHost = DEFAULTS.BURNER_IP
     @State public var cfg_refreshInterval: Double = DEFAULTS.REFRESH
     @State private var isRefreshEditing: Bool = false
-    
+    @State private var showAlert: Bool = false
+    @State private var alertMessage = ""
+
     var body: some View {
         NavigationView {
             Form {
@@ -21,13 +23,52 @@ struct SettingsView: View {
                     
                     TextField("Burner IP or hostname", text: $cfg_burnerHost)
                     
+                        Button {
+                            let viewModel = KMPBurnerModel()
+                            alertMessage = "Connection tested successfully!"
+                            do {
+                                var isWorking = try viewModel.testKMPConnection(host: cfg_burnerHost)
+                            } catch ConnectionError.invalidHost {
+                                alertMessage = "Invalid Host, please use a valid IP or hostname"
+                            } catch ConnectionError.noConnection {
+                                alertMessage = "Cannot connect to host"
+                            } catch ConnectionError.noValidJSON {
+                                alertMessage = "I can connect to host, but it looks like it is not a KMP Burner"
+                            } catch {
+                                alertMessage = "Unexpected error (sorry)"
+                            }
+                            showAlert = true
+                            
+                        } label: {
+                            Text("Test")
+                                .frame(maxWidth: .infinity)
+                                .padding()
+                                .foregroundColor(Color.white)
+                                .background(Color.accentColor)
+                                .cornerRadius(10)
+                        }
+                        .alert(isPresented: $showAlert) {
+                            Alert(title: Text("Connection test"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+                        }
 
-                    Button {
-                        UIApplication.shared.open(getKMPUXURL(host: cfg_burnerHost))
-                    } label: {
-                        Text("Test")
+                        Button (action: {
+                            UIApplication.shared.open(getKMPUXURL(host: cfg_burnerHost))
+                        }) {
+                            HStack {
+                                Image(systemName: "square.and.arrow.up")
+                                    .padding()
+                                     .foregroundColor(.white)
+                                Text("Open Web Interface")
+                                    .padding()
+                                    .foregroundColor(Color.white)
+
+                            }
                             .frame(maxWidth: .infinity)
-                    }
+                            .background(Color.accentColor)
+                            .cornerRadius(10)
+
+                        }
+
 
                 }
                 
