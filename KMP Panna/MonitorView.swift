@@ -13,6 +13,7 @@ struct MonitorView: View {
     @StateObject var viewModel = KMPBurnerModel()
     @AppStorage("cfg_burnerHost") var cfg_burnerHost: String = DEFAULTS.BURNER_IP
     @AppStorage("cfg_refreshInterval") var cfg_refreshInterval: Double = DEFAULTS.REFRESH
+    @Binding var selectedTab: Int  // used to understand which TabView is currently Shown
   
 
     let dateFormatter: DateFormatter = {
@@ -103,8 +104,11 @@ struct MonitorView: View {
             // Fetch the data every time the timer expires
             .onReceive(timer) { _ in
                 print ("onReceive(\(cfg_refreshInterval) sec)")
-                //print ("Apparently \(timer.interval) seconds has passed, fecthing new data.")
-                viewModel.fetchKMPData()
+                    if selectedTab == TABS.MONITORING {
+                        viewModel.fetchKMPData()
+                    } else {
+                        print("Monitorning View is not active, skipping fetchKMPData() call")
+                    }
             }
             
         }
@@ -120,6 +124,8 @@ struct MonitorView: View {
     
 }
 
-#Preview {
-    MonitorView()
+struct MonitorView_Previews: PreviewProvider {
+    static var previews: some View {
+        MonitorView(selectedTab: .constant(TABS.MONITORING))
+    }
 }

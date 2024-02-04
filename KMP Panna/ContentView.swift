@@ -8,19 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var selectedTab = TABS.MONITORING
     
     var body: some View {
-                TabView {
-                    MonitorView()
+                TabView(selection: $selectedTab) {
+                    MonitorView(selectedTab: $selectedTab)
                         .tabItem {
                             Image(systemName: "flame.fill")
                             Text("Status")
                         }
+                        .tag(TABS.MONITORING)
                     SettingsView()
                         .tabItem {
                             Image(systemName: "gearshape")
                             Text("Settings")
                         }
+                        .tag(TABS.SETTINGS)
+
                 }
     }  // enf of view
     

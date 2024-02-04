@@ -23,3 +23,8 @@ enum DEFAULTS {
     static let REFRESH: Double = 10
     static let HTTPTIMEOUT: Double = 30
 }
+
+enum TABS {
+    static let MONITORING = 0
+    static let SETTINGS = 1
+}
