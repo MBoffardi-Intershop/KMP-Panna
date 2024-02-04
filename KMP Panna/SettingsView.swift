@@ -40,7 +40,7 @@ struct SettingsView: View {
                             showAlert = true
                             
                         } label: {
-                            Text("Test and Save")
+                            Text("Test connection")
                                 .frame(maxWidth: .infinity)
                                 .padding()
                                 .foregroundColor(Color.white)
@@ -82,7 +82,7 @@ struct SettingsView: View {
                              isRefreshEditing = editing
                          }
                      )
-                     Text("\(Int(cfg_refreshInterval))")
+                     Text("\(Int(cfg_refreshInterval)) seconds")
                          .foregroundColor(isRefreshEditing ? .red : .blue)
                 }
                 
