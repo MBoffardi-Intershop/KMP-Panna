@@ -11,11 +11,9 @@ Also, it is not pushed to AppStore now, and it shuld be pushed to an iPhone in D
 ## todo list:
 
 - Finish configuration settings
--- Save data
 -- Verify TEST button
 --- Change test to asynchronous and show loader?
 - Stop polling when MonitorView is not visible (ie in Settings tab)
-- Proper URL Configuration
 - Show time to next requestTimer
 - Support for Night theme
 - Test when the burner is in Error Status

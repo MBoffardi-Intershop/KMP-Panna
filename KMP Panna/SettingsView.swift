@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @State public var cfg_burnerHost = DEFAULTS.BURNER_IP
-    @State public var cfg_refreshInterval: Double = DEFAULTS.REFRESH
+    @AppStorage("cfg_burnerHost") var cfg_burnerHost: String = DEFAULTS.BURNER_IP
+    @AppStorage("cfg_refreshInterval") var cfg_refreshInterval: Double = DEFAULTS.REFRESH
     @State private var isRefreshEditing: Bool = false
     @State private var showAlert: Bool = false
     @State private var alertMessage = ""
@@ -20,14 +20,14 @@ struct SettingsView: View {
                 
                 Section(header: Text("Connection"),
                         footer: Text("IP or hostname of the KMP Pellet Burner, as displayed in the configuration. Do not provide protocol (http://) or a URL")) {
-                    
+                
                     TextField("Burner IP or hostname", text: $cfg_burnerHost)
                     
                         Button {
                             let viewModel = KMPBurnerModel()
                             alertMessage = "Connection tested successfully!"
                             do {
-                                var isWorking = try viewModel.testKMPConnection(host: cfg_burnerHost)
+                                _ = try viewModel.testKMPConnection(host: cfg_burnerHost)
                             } catch ConnectionError.invalidHost {
                                 alertMessage = "Invalid Host, please use a valid IP or hostname"
                             } catch ConnectionError.noConnection {
@@ -40,7 +40,7 @@ struct SettingsView: View {
                             showAlert = true
                             
                         } label: {
-                            Text("Test")
+                            Text("Test and Save")
                                 .frame(maxWidth: .infinity)
                                 .padding()
                                 .foregroundColor(Color.white)

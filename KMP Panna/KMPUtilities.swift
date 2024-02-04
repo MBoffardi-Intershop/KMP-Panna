@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 // Model for KMP JSON Data
 // HAS to be exactly as KMP returns it
@@ -71,11 +72,11 @@ struct Info {
 
 
 func getJSONURL(host: String? = nil) -> URL {
-    // todo, use configuration values here
     // use also some error catching instead of retuning empty
+    @AppStorage("cfg_burnerHost") var cfg_burnerHost: String = DEFAULTS.BURNER_IP
     var _host = host
     if (host == nil) {
-        _host = DEFAULTS.BURNER_IP
+        _host = cfg_burnerHost
     }
     let jsonURL = URL(string: "http://\(_host!)/data.html")!
     return jsonURL
@@ -97,6 +98,8 @@ enum ConnectionError: Error {
 
 class KMPBurnerModel: ObservableObject {
     @Published var kmpData: KMPData?
+    @AppStorage("cfg_httpTimeout") var cfg_httpTimeout: Double = DEFAULTS.HTTPTIMEOUT
+    
     var isFetchingData = false
     
     // Maps JSON values into ready to use and understandabe values
@@ -189,8 +192,8 @@ class KMPBurnerModel: ObservableObject {
         }
         
         dataTask.resume()
-        urlSession.configuration.timeoutIntervalForRequest = DEFAULTS.HTTPTIMEOUT
-        urlSession.configuration.timeoutIntervalForResource = DEFAULTS.HTTPTIMEOUT
+        urlSession.configuration.timeoutIntervalForRequest = cfg_httpTimeout
+        urlSession.configuration.timeoutIntervalForResource = cfg_httpTimeout
     }
     
     // tries to get and decde JSON from provided host, true if connection works, false otherwise
@@ -199,11 +202,7 @@ class KMPBurnerModel: ObservableObject {
         var pannaURL = getJSONURL(host: host)
         var data: Data
         
-        do {
-            pannaURL = getJSONURL(host: host)
-        } catch {
-            throw ConnectionError.invalidHost
-        }
+        pannaURL = getJSONURL(host: host)
         
         do {
             data = try Data(contentsOf: pannaURL)
@@ -212,7 +211,7 @@ class KMPBurnerModel: ObservableObject {
         }
         
         do {
-            let json = try decoder.decode(KMPData.self, from: data)
+            let _ = try decoder.decode(KMPData.self, from: data)
         } catch {
             throw ConnectionError.noValidJSON
         }

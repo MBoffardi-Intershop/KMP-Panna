@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var isAppLoading = true // State variable to track APP loading state
     
     var body: some View {
                 TabView {

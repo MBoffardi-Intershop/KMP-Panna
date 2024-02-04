@@ -7,20 +7,27 @@
 
 
 import SwiftUI
-
-
+import Combine
 
 struct MonitorView: View {
     @StateObject var viewModel = KMPBurnerModel()
-    let timer = Timer.publish(every: DEFAULTS.REFRESH, on: .main, in: .common).autoconnect()
-    
+    @AppStorage("cfg_burnerHost") var cfg_burnerHost: String = DEFAULTS.BURNER_IP
+    @AppStorage("cfg_refreshInterval") var cfg_refreshInterval: Double = DEFAULTS.REFRESH
+  
+
     let dateFormatter: DateFormatter = {
             let formatter = DateFormatter()
             formatter.dateFormat = "HH:mm:ss"
             return formatter
         }()
-    
-    
+
+    // Timer based on the AppStorage variable cfg_refreshInterval.
+    // Change the AppStorage value and the timer automagically reset to the new value
+    private var timer: Publishers.Autoconnect<Timer.TimerPublisher> {
+        Timer.publish(every: cfg_refreshInterval, on: .main, in: .common)
+            .autoconnect()
+    }
+        
     var body: some View {
         ScrollView  {
             VStack(spacing: 15.0) {
@@ -89,12 +96,14 @@ struct MonitorView: View {
             // Fetch the data the first time the UI appears
             .onAppear() {
                 print ("onAppear()")
+                //print ("Refresh timer set to \(timer.interval) seconds.")
                 viewModel.fetchKMPData()
             }
             
             // Fetch the data every time the timer expires
             .onReceive(timer) { _ in
-                print ("onReceive()")
+                print ("onReceive(\(cfg_refreshInterval) sec)")
+                //print ("Apparently \(timer.interval) seconds has passed, fecthing new data.")
                 viewModel.fetchKMPData()
             }
             
