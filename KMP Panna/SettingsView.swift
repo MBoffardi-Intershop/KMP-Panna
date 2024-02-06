@@ -131,7 +131,7 @@ struct SettingsView: View {
                         print("Test: received Raw JSON Data: \(jsonString)")
                     }
                     let decoder = JSONDecoder()
-                    let decoded =  try decoder.decode(KMPData.self, from: data)
+                    let _ =  try decoder.decode(KMPData.self, from: data)
                     
                     alertMessage =  "Connection tested successfully!"
                     isTesting = false
