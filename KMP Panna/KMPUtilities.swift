@@ -44,6 +44,7 @@ struct KMPData: Codable {
     let Hardware: String    // ?
 }
 
+
 // Wrapper Structure that makes KMPData more accessible,
 // isolating the JSON value interpretation logic
 struct Info {
@@ -158,7 +159,7 @@ class KMPBurnerModel: ObservableObject {
     // Get the JSON from the provided host.
     func fetchKMPData() {
         let pannaURL = getJSONURL()
-        print("Recovering data from \(pannaURL)")
+        print("Recovering data from \(pannaURL), timeout \(cfg_httpTimeout)s")
         
         // Check if already fetching data
         guard !isFetchingData else {
@@ -167,9 +168,8 @@ class KMPBurnerModel: ObservableObject {
         
         isFetchingData = true
         
-        let urlSession = URLSession(configuration: .default)
-        
-        let dataTask = urlSession.dataTask(with: pannaURL) { data, response, error in
+        let urlRequest = URLRequest(url: pannaURL, timeoutInterval: cfg_httpTimeout)
+        let dataTask = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
             guard let data = data else {
                 return
             }
@@ -192,17 +192,14 @@ class KMPBurnerModel: ObservableObject {
         }
         
         dataTask.resume()
-        urlSession.configuration.timeoutIntervalForRequest = cfg_httpTimeout
-        urlSession.configuration.timeoutIntervalForResource = cfg_httpTimeout
     }
     
     // tries to get and decde JSON from provided host, true if connection works, false otherwise
+    /*
     func testKMPConnection (host: String) throws -> Bool {
         let decoder = JSONDecoder()
         var pannaURL = getJSONURL(host: host)
         var data: Data
-        
-        pannaURL = getJSONURL(host: host)
         
         do {
             data = try Data(contentsOf: pannaURL)
@@ -218,6 +215,7 @@ class KMPBurnerModel: ObservableObject {
         return true
 
     }
+    */
     
     func resetFetchingStatus() {
         isFetchingData = false

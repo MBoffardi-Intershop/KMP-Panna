@@ -10,9 +10,6 @@ Also, it is not pushed to AppStore now, and it shuld be pushed to an iPhone in D
 
 ## todo list:
 
-- Finish configuration settings
--- Verify TEST button
---- Change test to asynchronous and show loader?
 - Show time to next requestTimer
 - Support for Night theme
 - Test when the burner is in Error Status
