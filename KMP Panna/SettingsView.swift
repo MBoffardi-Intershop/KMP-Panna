@@ -6,20 +6,29 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct SettingsView: View {
     @AppStorage("cfg_burnerHost") var cfg_burnerHost: String = DEFAULTS.BURNER_IP
     @AppStorage("cfg_refreshInterval") var cfg_refreshInterval: Double = DEFAULTS.REFRESH
     @AppStorage("cfg_httpTimeout") var cfg_httpTimeout: Double = DEFAULTS.HTTPTIMEOUT
+    @AppStorage("cfg_isNotificationEnabled") private var cfg_isNotificationEnabled: Bool = false
+    @AppStorage("cfg_notifyForBurnStart") private var cfg_notifyForBurnStart: Bool = false
+    @AppStorage("cfg_backgroundRefreshInterval") var cfg_backgroundRefreshInterval: TimeInterval = DEFAULTS.BACKGROUND_REFRESH
+
+    
     @State private var isRefreshEditing: Bool = false
+    @State private var isBackgroundRefreshEditing: Bool = false
     @State private var isTimeoutEditing: Bool = false
     @State private var showAlert: Bool = false
     @State private var alertMessage = ""
     @State private var isTesting = false
+    @State private var notificationPermissionGranted = false
     
     @State private var test = ""
     @State private var testD = 0.0
 
+    let timeFormatter = DateComponentsFormatter()
     
     var body: some View {
         NavigationView {
@@ -106,6 +115,40 @@ struct SettingsView: View {
                          .foregroundColor(isRefreshEditing ? .red : .blue)
                 }
                 
+                Section(header: Text("Notifications"),
+                        footer: Text("Configure if the app should do background checks even when the app is closed, and send notifications in case of error")) {
+                    
+                        Toggle(
+                            "Enable Notifications",
+                            isOn: $cfg_isNotificationEnabled
+                        )
+                        .onChange(of: cfg_isNotificationEnabled, initial: false) {oldValue, newValue in
+                            if newValue {
+                                requestNotificationPermission()
+                            } else {
+                                checkNotificationPermission()
+                            }
+                        }
+
+                    if cfg_isNotificationEnabled {
+                        Toggle(
+                            "Notify me when heating cycle starts",
+                            isOn: $cfg_notifyForBurnStart
+                        )
+                        
+                        Slider(
+                            value: $cfg_backgroundRefreshInterval,
+                            in: 60...86400, step: 60,
+                            onEditingChanged: { editing in
+                                isBackgroundRefreshEditing = editing
+                            }
+                        )
+                        
+                        Text("Every \(timeFormatter.string(from: cfg_backgroundRefreshInterval)!)")
+                            .foregroundColor(isBackgroundRefreshEditing ? .red : .blue)
+                    }
+                }
+                
             }
             .navigationTitle("Settings")
         }
@@ -145,6 +188,25 @@ struct SettingsView: View {
         }
         task.resume()
     }
+    
+    
+    
+    private func checkNotificationPermission() {
+        UNUserNotificationCenter.current().getNotificationSettings { settings in
+            DispatchQueue.main.async {
+                notificationPermissionGranted = settings.authorizationStatus == .authorized
+            }
+        }
+    }
+    
+    private func requestNotificationPermission() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, _ in
+            DispatchQueue.main.async {
+                notificationPermissionGranted = granted
+            }
+        }
+    }
+
     
 }
 
