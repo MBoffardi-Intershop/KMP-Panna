@@ -9,10 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     @State var selectedTab = TABS.MONITORING
+    @AppStorage("cfg_isNotificationEnabled") private var cfg_isNotificationEnabled: Bool = false
     
     var body: some View {
                 TabView(selection: $selectedTab) {
-                    MonitorView(selectedTab: $selectedTab)
+                    MonitorView()
                         .tabItem {
                             Image(systemName: "flame.fill")
                             Text("Status")
@@ -25,6 +26,12 @@ struct ContentView: View {
                         }
                         .tag(TABS.SETTINGS)
 
+                }
+                .onAppear() {
+                    if cfg_isNotificationEnabled {
+                        print ("Notifications are enabled, registering the Background Task")
+                        BackgroundTask().registerBackgroundTask()
+                    }
                 }
     }  // enf of view
     

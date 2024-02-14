@@ -17,3 +17,8 @@ Also, it is not pushed to AppStore now, and it shuld be pushed to an iPhone in D
 - Submit to AppStore
 - Support to Localization
 
+
+
+## Background task
+On dev mode, during a debug breakpoint, type this in the lldb debug console to simulate a bg task
+e -l objc -- (void)[[BGTaskScheduler sharedScheduler] _simulateLaunchForTaskWithIdentifier:@"bcc.KMP-Panna.backgroundTask.monitor"]

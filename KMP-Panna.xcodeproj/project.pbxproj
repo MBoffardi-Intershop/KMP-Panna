@@ -16,6 +16,7 @@
 		9286BE732B68E32000CFD616 /* KMP_PannaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9286BE722B68E32000CFD616 /* KMP_PannaTests.swift */; };
 		9286BE7D2B68E32000CFD616 /* KMP_PannaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9286BE7C2B68E32000CFD616 /* KMP_PannaUITests.swift */; };
 		9286BE7F2B68E32000CFD616 /* KMP_PannaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9286BE7E2B68E32000CFD616 /* KMP_PannaUITestsLaunchTests.swift */; };
+		928762A52B7D028100D264D8 /* BackgroundTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928762A42B7D028100D264D8 /* BackgroundTask.swift */; };
 		9292C7C12B6D1D4C00086398 /* MonitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9292C7C02B6D1D4C00086398 /* MonitorView.swift */; };
 		9292C7C32B6D263200086398 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9292C7C22B6D263200086398 /* Launch Screen.storyboard */; };
 		92DF30CC2B6A885D0074297F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 92DF30CB2B6A885D0074297F /* README.md */; };
@@ -54,6 +55,7 @@
 		9286BE782B68E32000CFD616 /* KMP-PannaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "KMP-PannaUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9286BE7C2B68E32000CFD616 /* KMP_PannaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMP_PannaUITests.swift; sourceTree = "<group>"; };
 		9286BE7E2B68E32000CFD616 /* KMP_PannaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMP_PannaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		928762A42B7D028100D264D8 /* BackgroundTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTask.swift; sourceTree = "<group>"; };
 		9292C7C02B6D1D4C00086398 /* MonitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorView.swift; sourceTree = "<group>"; };
 		9292C7C22B6D263200086398 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		92DF30CB2B6A885D0074297F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				923FEA252B739FA1002E2F24 /* NotificationHandler.swift */,
 				9286BE652B68E31F00CFD616 /* Assets.xcassets */,
 				9286BE672B68E31F00CFD616 /* Preview Content */,
+				928762A42B7D028100D264D8 /* BackgroundTask.swift */,
 			);
 			path = "KMP Panna";
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 			files = (
 				924DCF482B6A9C0700C0BDFD /* Constants.swift in Sources */,
 				9292C7C12B6D1D4C00086398 /* MonitorView.swift in Sources */,
+				928762A52B7D028100D264D8 /* BackgroundTask.swift in Sources */,
 				923FEA262B739FA1002E2F24 /* NotificationHandler.swift in Sources */,
 				92DF30CE2B6A8E720074297F /* SettingsView.swift in Sources */,
 				92DF30D02B6A9A950074297F /* KMPUtilities.swift in Sources */,

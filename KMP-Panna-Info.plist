@@ -4,10 +4,11 @@
 <dict>
 	<key>BGTaskSchedulerPermittedIdentifiers</key>
 	<array>
-		<string>bcc.KMP-Panna.backgroundFetchTask</string>
+		<string>bcc.KMP-Panna.backgroundTask.monitor</string>
 	</array>
 	<key>UIBackgroundModes</key>
 	<array>
+		<string>fetch</string>
 		<string>processing</string>
 	</array>
 </dict>

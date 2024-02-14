@@ -178,11 +178,12 @@ class KMPBurnerModel: ObservableObject {
                 if let jsonString = String(data: data, encoding: .utf8) {
                     print("Raw JSON Data: \(jsonString)")
                 }
-                print ("now decoding")
+                //print ("now decoding")
                 let decoder = JSONDecoder()
                 let kmpData = try decoder.decode(KMPData.self, from: data)
                 DispatchQueue.main.async {
                     self.kmpData = kmpData
+                    print ("KMPData refreshed.")
                 }
             } catch {
                 print("Error decoding JSON: \(error)")

@@ -9,12 +9,14 @@
 import SwiftUI
 import Combine
 
+var performRefresh = true
+
+
 struct MonitorView: View {
     @StateObject var viewModel = KMPBurnerModel()
     @AppStorage("cfg_burnerHost") var cfg_burnerHost: String = DEFAULTS.BURNER_IP
     @AppStorage("cfg_refreshInterval") var cfg_refreshInterval: Double = DEFAULTS.REFRESH
-    @Binding var selectedTab: Int  // used to understand which TabView is currently Shown
-  
+    @Environment(\.scenePhase) private var env_scenePhase
 
     let dateFormatter: DateFormatter = {
             let formatter = DateFormatter()
@@ -97,19 +99,36 @@ struct MonitorView: View {
             // Fetch the data the first time the UI appears
             .onAppear() {
                 print ("onAppear()")
+                print ("MonitorView is in foreground, enable refresh")
+                performRefresh = true
                 //print ("Refresh timer set to \(timer.interval) seconds.")
                 viewModel.fetchKMPData()
             }
             
             // Fetch the data every time the timer expires
             .onReceive(timer) { _ in
-                print ("onReceive(\(cfg_refreshInterval) sec)")
-                    if selectedTab == TABS.MONITORING {
+                print ("onReceive(\(cfg_refreshInterval) sec), perfomRefresh=\(performRefresh)")
+                if performRefresh {
                         viewModel.fetchKMPData()
-                    } else {
-                        print("Monitorning View is not active, skipping fetchKMPData() call")
-                    }
+                }
             }
+            .onDisappear() {
+                print ("MonitorView is not in foreground, performRefresh->false")
+                performRefresh = false
+            }
+            .onChange(of: env_scenePhase) { newPhase in
+                            if newPhase == .inactive {
+                                print("Scene changed to Inactive, performRefresh->false")
+                                performRefresh = false
+                            } else if newPhase == .active {
+                                print("Scene changed to Active, performRefresh->true")
+                                performRefresh = true
+                                viewModel.resetFetchingStatus()
+                            } else if newPhase == .background {
+                                print("Scene changed to Background, performRefresh->false")
+                                performRefresh=false
+                            }
+                        }
             
         }
         .refreshable {
@@ -126,6 +145,6 @@ struct MonitorView: View {
 
 struct MonitorView_Previews: PreviewProvider {
     static var previews: some View {
-        MonitorView(selectedTab: .constant(TABS.MONITORING))
+        MonitorView()
     }
 }
