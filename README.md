@@ -17,6 +17,32 @@ Also, it is not pushed to AppStore now, and it shuld be pushed to an iPhone in D
 - Submit to AppStore
 - Support to Localization
 
+## Example of Json response
+See definition of KMPData in KMPUtilities.swift for interpretation of meaning
+{
+  "mode":"VILAR...",
+  "glow":"AVST&#196;NGT",
+  "ttop":"49",
+  "tbottom":"443",
+  "feed":"0",
+  "xFan":"0",
+  "cFan":"0",
+  "tFlame":"1",
+  "tFlue":"21",
+  "draft":"0",
+  "amps":"0.1",
+  "tRoom":"16",
+  "tStop":"70",
+  "tStart":"45",
+  "nattFlagg":"0",
+  "mode2":"2",
+  "alarm1":"NO ALARM",
+  "alarm2":"MEDELANDE",
+  "lang":"1",
+  "bmpT":"21",
+  "Flame":"1",
+  "Hardware":"1"
+}
 
 
 ## Background task
