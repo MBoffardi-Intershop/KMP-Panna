@@ -19,6 +19,7 @@ Also, it is not pushed to AppStore now, and it shuld be pushed to an iPhone in D
 
 ## Example of Json response
 See definition of KMPData in KMPUtilities.swift for interpretation of meaning
+```
 {
   "mode":"VILAR...",
   "glow":"AVST&#196;NGT",
@@ -43,8 +44,10 @@ See definition of KMPData in KMPUtilities.swift for interpretation of meaning
   "Flame":"1",
   "Hardware":"1"
 }
-
+```
 
 ## Background task
 On dev mode, during a debug breakpoint, type this in the lldb debug console to simulate a bg task
+```
 e -l objc -- (void)[[BGTaskScheduler sharedScheduler] _simulateLaunchForTaskWithIdentifier:@"bcc.KMP-Panna.backgroundTask.monitor"]
+```
