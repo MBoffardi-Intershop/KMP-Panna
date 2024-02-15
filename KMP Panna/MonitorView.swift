@@ -69,7 +69,7 @@ struct MonitorView: View {
                     
                     Text("Temperature \(Int(info.currentTemp))°").controlSize(.extraLarge).font(.title)
                     
-                    if info.showDetails {
+                    if info.isBurnerActive {
 
                         VStack(spacing: 5.0) {
                             LabeledContent("Igniter", value: (info.igniterOn ? "ON" : "OFF"))
@@ -102,29 +102,29 @@ struct MonitorView: View {
                 print ("MonitorView is in foreground, enable refresh")
                 performRefresh = true
                 //print ("Refresh timer set to \(timer.interval) seconds.")
-                viewModel.fetchKMPData()
+                viewModel.fetchKMPDataAsync()
             }
             
             // Fetch the data every time the timer expires
             .onReceive(timer) { _ in
                 print ("onReceive(\(cfg_refreshInterval) sec), perfomRefresh=\(performRefresh)")
                 if performRefresh {
-                        viewModel.fetchKMPData()
+                        viewModel.fetchKMPDataAsync()
                 }
             }
             .onDisappear() {
                 print ("MonitorView is not in foreground, performRefresh->false")
                 performRefresh = false
             }
-            .onChange(of: env_scenePhase) { newPhase in
-                            if newPhase == .inactive {
+            .onChange(of: env_scenePhase) { 
+                            if env_scenePhase == .inactive {
                                 print("Scene changed to Inactive, performRefresh->false")
                                 performRefresh = false
-                            } else if newPhase == .active {
+                            } else if env_scenePhase == .active {
                                 print("Scene changed to Active, performRefresh->true")
                                 performRefresh = true
                                 viewModel.resetFetchingStatus()
-                            } else if newPhase == .background {
+                            } else if env_scenePhase == .background {
                                 print("Scene changed to Background, performRefresh->false")
                                 performRefresh=false
                             }
@@ -135,7 +135,7 @@ struct MonitorView: View {
             print ("Manual Refresh")
             // forces a new request
             viewModel.resetFetchingStatus()
-            viewModel.fetchKMPData()
+            viewModel.fetchKMPDataAsync()
         }
         
     }  // enf of view

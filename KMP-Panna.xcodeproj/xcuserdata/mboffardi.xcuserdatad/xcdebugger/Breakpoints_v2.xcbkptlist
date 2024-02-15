@@ -7,54 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "EC26A07E-F3C6-4BD9-8A2B-82E05D271413"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "KMP Panna/BackgroundTask.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "handleBackgroundTask(task:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "EC26A07E-F3C6-4BD9-8A2B-82E05D271413 - 5082c2913df752e4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "KMP_Panna.BackgroundTask.handleBackgroundTask(task: __C.BGAppRefreshTask) -&gt; ()"
-                  moduleName = "KMP-Panna"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mboffardi/Documents/kmppanna/KMP-Panna/KMP%20Panna/BackgroundTask.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "39"
-                  endingLineNumber = "39"
-                  offsetFromSymbolStart = "132">
-               </Location>
-               <Location
-                  uuid = "EC26A07E-F3C6-4BD9-8A2B-82E05D271413 - 5082c2913df752e4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "KMP_Panna.BackgroundTask.handleBackgroundTask(task: __C.BGAppRefreshTask) -&gt; ()"
-                  moduleName = "KMP-Panna"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mboffardi/Documents/kmppanna/KMP-Panna/KMP%20Panna/BackgroundTask.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "39"
-                  endingLineNumber = "39"
-                  offsetFromSymbolStart = "114">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "4E5EE830-CA84-492E-A838-13D53C7DB440"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -66,6 +18,228 @@
             endingLineNumber = "110"
             landmarkName = "body"
             landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "4E5EE830-CA84-492E-A838-13D53C7DB440 - 957506db8ce72993"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 (Foundation.Date) -&gt; () in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.onReceive&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Combine.Publisher, &#x3c4;_1_0.Failure == Swift.Never&gt;(_: &#x3c4;_1_0, perform: (&#x3c4;_1_0.Output) -&gt; ()) -&gt; some&gt;&gt;.0 in KMP_Panna.MonitorView.body.getter : some"
+                  moduleName = "KMP-Panna"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mboffardi/Documents/kmppanna/KMP-Panna/KMP%20Panna/MonitorView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "106"
+                  endingLineNumber = "106"
+                  offsetFromSymbolStart = "124">
+               </Location>
+               <Location
+                  uuid = "4E5EE830-CA84-492E-A838-13D53C7DB440 - 987559a098007e2f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 (Foundation.Date) -&gt; () in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.onChange&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Equatable&gt;(of: &#x3c4;_1_0, perform: (&#x3c4;_1_0) -&gt; ()) -&gt; some&gt;&gt;.0 in KMP_Panna.MonitorView.body.getter : some"
+                  moduleName = "KMP-Panna"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mboffardi/Documents/kmppanna/KMP-Panna/KMP%20Panna/MonitorView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "110"
+                  endingLineNumber = "110"
+                  offsetFromSymbolStart = "252">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3BF371B9-F879-4737-BCED-254E74EB1E42"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KMP Panna/KMPUtilities.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "getJSONURL(host:)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "3BF371B9-F879-4737-BCED-254E74EB1E42 - 65b427b187ac2eda"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "KMP_Panna.getJSONURL(host: Swift.Optional&lt;Swift.String&gt;) -&gt; Foundation.URL"
+                  moduleName = "KMP-Panna"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mboffardi/Documents/kmppanna/KMP-Panna/KMP%20Panna/KMPUtilities.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "350">
+               </Location>
+               <Location
+                  uuid = "3BF371B9-F879-4737-BCED-254E74EB1E42 - 65b427b187ac2eda"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "KMP_Panna.getJSONURL(host: Swift.Optional&lt;Swift.String&gt;) -&gt; Foundation.URL"
+                  moduleName = "KMP-Panna"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mboffardi/Documents/kmppanna/KMP-Panna/KMP%20Panna/KMPUtilities.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "359">
+               </Location>
+               <Location
+                  uuid = "3BF371B9-F879-4737-BCED-254E74EB1E42 - 65b427b187ac2eda"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "KMP_Panna.getJSONURL(host: Swift.Optional&lt;Swift.String&gt;) -&gt; Foundation.URL"
+                  moduleName = "KMP-Panna"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mboffardi/Documents/kmppanna/KMP-Panna/KMP%20Panna/KMPUtilities.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "366">
+               </Location>
+               <Location
+                  uuid = "3BF371B9-F879-4737-BCED-254E74EB1E42 - 70cb1dd7936c71d7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "KMP_Panna.getJSONURL(host: Swift.Optional&lt;Swift.String&gt;) -&gt; Swift.Optional&lt;Foundation.URL&gt;"
+                  moduleName = "KMP-Panna"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mboffardi/Documents/kmppanna/KMP-Panna/KMP%20Panna/KMPUtilities.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "308">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2017B1AB-13FE-4FB2-AABB-EFDEFBDB84D6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KMP Panna/MonitorView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "2017B1AB-13FE-4FB2-AABB-EFDEFBDB84D6 - 125d02640666dbfa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #5 (SwiftUI.ScenePhase) -&gt; () in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.onChange&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Equatable&gt;(of: &#x3c4;_1_0, perform: (&#x3c4;_1_0) -&gt; ()) -&gt; some&gt;&gt;.0 in KMP_Panna.MonitorView.body.getter : some"
+                  moduleName = "KMP-Panna"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mboffardi/Documents/kmppanna/KMP-Panna/KMP%20Panna/MonitorView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "120"
+                  endingLineNumber = "120"
+                  offsetFromSymbolStart = "186">
+               </Location>
+               <Location
+                  uuid = "2017B1AB-13FE-4FB2-AABB-EFDEFBDB84D6 - 125d02640666dbfa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #5 (SwiftUI.ScenePhase) -&gt; () in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.onChange&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Equatable&gt;(of: &#x3c4;_1_0, perform: (&#x3c4;_1_0) -&gt; ()) -&gt; some&gt;&gt;.0 in KMP_Panna.MonitorView.body.getter : some"
+                  moduleName = "KMP-Panna"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mboffardi/Documents/kmppanna/KMP-Panna/KMP%20Panna/MonitorView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "120"
+                  endingLineNumber = "120"
+                  offsetFromSymbolStart = "264">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "28D7BD5A-1109-4E88-82F2-C280DC5013D7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KMP Panna/MonitorView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ACF76A55-2F2C-47F1-B16D-724546C3CFEA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KMP Panna/BackgroundTask.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "backgroundKMPCall()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "ACF76A55-2F2C-47F1-B16D-724546C3CFEA - 23d8a5e61cb8e850"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "KMP_Panna.BackgroundTask.backgroundKMPCall() -&gt; ()"
+                  moduleName = "KMP-Panna"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mboffardi/Documents/kmppanna/KMP-Panna/KMP%20Panna/BackgroundTask.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "428">
+               </Location>
+               <Location
+                  uuid = "ACF76A55-2F2C-47F1-B16D-724546C3CFEA - 23d8a5e61cb8e850"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "KMP_Panna.BackgroundTask.backgroundKMPCall() -&gt; ()"
+                  moduleName = "KMP-Panna"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mboffardi/Documents/kmppanna/KMP-Panna/KMP%20Panna/BackgroundTask.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "468">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

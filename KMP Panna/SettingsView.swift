@@ -149,6 +149,18 @@ struct SettingsView: View {
                     }
                 }
                 
+                Button {
+                    let forcedTask = BackgroundTask()
+                    forcedTask.backgroundKMPCall()
+                } label: {
+                    Text("Test background Monitor")
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .foregroundColor(Color.white)
+                        .background(Color.red)
+                        .cornerRadius(10)
+                }
+                
             }
             .navigationTitle("Settings")
         }
@@ -157,7 +169,12 @@ struct SettingsView: View {
     // The actual call is a duplicate of that in fetchKMPData, but it is not a lot of code
     // and it is easier to handle it here together with the progressbar and teh alert messages
     func testConnection() {
-        let url = getJSONURL()
+        guard let url=getJSONURL() else {
+            alertMessage =  "Hostnamne does not seems to be valid"
+            isTesting = false
+            showAlert = true
+            return
+        }
         
         let urlRequest = URLRequest(url: url, timeoutInterval: cfg_httpTimeout)
         let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in

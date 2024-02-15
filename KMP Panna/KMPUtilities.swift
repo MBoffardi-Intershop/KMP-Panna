@@ -62,7 +62,7 @@ struct Info {
     var isInError: Bool    = false      // Panna is in error state
     var errorMessage1: String = ""      // First line of error message
     var errorMessage2: String = ""      // Second line of error
-    var showDetails: Bool {
+    var isBurnerActive: Bool {
         (self.status == STATUS.LOADING) ||
         (self.status == STATUS.WARMUP) ||
         (self.status == STATUS.IGNITION) ||
@@ -72,14 +72,18 @@ struct Info {
 }
 
 
-func getJSONURL(host: String? = nil) -> URL {
+func getJSONURL(host: String? = nil) -> URL? {
     // use also some error catching instead of retuning empty
     @AppStorage("cfg_burnerHost") var cfg_burnerHost: String = DEFAULTS.BURNER_IP
     var _host = host
+//    if (cfg_burnerHost.isEmpty) {
+//        cfg_burnerHost = DEFAULTS.BURNER_IP
+//    }
     if (host == nil) {
         _host = cfg_burnerHost
     }
-    let jsonURL = URL(string: "http://\(_host!)/data.html")!
+    let jsonURLString = "https://\(_host!)/data.html"
+    let jsonURL = URL(string: jsonURLString)
     return jsonURL
 }
 
@@ -156,9 +160,13 @@ class KMPBurnerModel: ObservableObject {
         return info
     }
     
-    // Get the JSON from the provided host.
-    func fetchKMPData() {
+    // Get the JSON from the provided host, via Async call
+    func fetchKMPDataAsync() {
         let pannaURL = getJSONURL()
+        guard let pannaURL=pannaURL else {
+            print ("Invalid URL provided, skipping")
+            return
+        }
         print("Recovering data from \(pannaURL), timeout \(cfg_httpTimeout)s")
         
         // Check if already fetching data
@@ -194,6 +202,51 @@ class KMPBurnerModel: ObservableObject {
         
         dataTask.resume()
     }
+    
+    
+    // Get the Info wrapper from the provided host, via SYNC call
+    // used in BackgroundTask
+    func fetchKMPInfoSync() throws -> Info? {
+        var responseData: Data?
+        let pannaURL = getJSONURL()
+        guard let pannaURL=pannaURL else {
+            print ("fetchKMPDataSync(), Invalid URL provided, returning invalidHost excpetion")
+            throw ConnectionError.invalidHost
+        }
+        print("fetchKMPDataSync(): Recovering data from \(pannaURL), timeout \(cfg_httpTimeout)s, SYNCHRONOUS")
+                
+        let urlRequest = URLRequest(url: pannaURL)
+        let semaphore = DispatchSemaphore(value:0)
+        URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+            if let data = data {
+                responseData = data
+            }
+            semaphore.signal()
+        }.resume()
+        
+        let timeout = DispatchTime.now() + cfg_httpTimeout
+        _ = semaphore.wait(timeout: timeout)
+        
+        if let data = responseData {
+                do {
+                    if let jsonString = String(data: data, encoding: .utf8) {
+                        print("Raw JSON Data: \(jsonString)")
+                    }
+                    //print ("now decoding")
+                    let decoder = JSONDecoder()
+                    let kmpData = try decoder.decode(KMPData.self, from: data)
+                    print ("KMPData returned Sync.")
+                    return decodeInfo(kmp: kmpData)
+                } catch {
+                    print("Error decoding JSON: \(error)")
+                    throw ConnectionError.noValidJSON
+                }
+        } else {
+           throw ConnectionError.noConnection
+        }
+    }
+            
+    
     
     // tries to get and decde JSON from provided host, true if connection works, false otherwise
     /*
