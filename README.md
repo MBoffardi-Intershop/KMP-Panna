@@ -10,12 +10,11 @@ Also, it is not pushed to AppStore now, and it shuld be pushed to an iPhone in D
 
 ## todo list:
 
-- Notifications (in progress)
-- IMPORTANT: Automate support to http/https
 - Show time to next requestTimer
 - Support for Night theme
 - Submit to AppStore
 - Support to Localization
+- idea: add "log" tab where to monitor events?
 
 ## Example of Json response
 See definition of KMPData in KMPUtilities.swift for interpretation of meaning

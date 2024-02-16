@@ -75,6 +75,8 @@ struct Info {
 func getJSONURL(host: String? = nil) -> URL? {
     // use also some error catching instead of retuning empty
     @AppStorage("cfg_burnerHost") var cfg_burnerHost: String = DEFAULTS.BURNER_IP
+    @AppStorage("cfg_useHTTPS") var cfg_useHTTPS: Bool = false
+
     var _host = host
 //    if (cfg_burnerHost.isEmpty) {
 //        cfg_burnerHost = DEFAULTS.BURNER_IP
@@ -82,14 +84,21 @@ func getJSONURL(host: String? = nil) -> URL? {
     if (host == nil) {
         _host = cfg_burnerHost
     }
-    let jsonURLString = "https://\(_host!)/data.html"
+    var jsonURLString = "http://\(_host!)/data.html"
+    if cfg_useHTTPS {
+        jsonURLString = "https://\(_host!)/data.html"
+    }
     let jsonURL = URL(string: jsonURLString)
     return jsonURL
 }
 
 // Used in the test button in settings
 func getKMPUXURL(host: String) -> URL {
-    let kmpUxURL = URL(string: "http://\(host)/")!
+    @AppStorage("cfg_useHTTPS") var cfg_useHTTPS: Bool = false
+    var kmpUxURL = URL(string: "http://\(host)/")!
+    if cfg_useHTTPS {
+        kmpUxURL = URL(string: "https://\(host)/")!
+    }
     return kmpUxURL
 }
 
@@ -104,7 +113,7 @@ enum ConnectionError: Error {
 class KMPBurnerModel: ObservableObject {
     @Published var kmpData: KMPData?
     @AppStorage("cfg_httpTimeout") var cfg_httpTimeout: Double = DEFAULTS.HTTPTIMEOUT
-    
+
     var isFetchingData = false
     
     // Maps JSON values into ready to use and understandabe values

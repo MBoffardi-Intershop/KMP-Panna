@@ -55,18 +55,22 @@ struct BackgroundTask {
         print ("Executing backgroundKMPCall")
         
         do {
-            var burner = KMPBurnerModel()
+            let burner = KMPBurnerModel()
             if let info = try burner.fetchKMPInfoSync() {
                 if info.isBurnerActive {
                     print ("Background: burner is active")
                     if previousStatus != Status.ACTIVE {
-                        print ("NOTIFICATION: burner became active")
+                        NotificationHandler.raiseNotification(body:"A warming cycle is in progress")
                         previousStatus = Status.ACTIVE
                     }
                 } else if info.isInError {
                     print ("Background: burner is in ERROR")
+                    // Question: if the burner is in error, send a notfication EVERY TIME until it is restored?
                     if previousStatus != Status.ERROR {
-                        print ("NOTIFICATION: burner became in error status")
+                        NotificationHandler.raiseNotification(body:"KMP burner stopped with ERROR!")
+                        previousStatus = Status.ERROR
+                    } else {
+                        NotificationHandler.raiseNotification(body:"KMP burner still in ERROR, please check")
                         previousStatus = Status.ERROR
                     }
                 } else {
@@ -76,7 +80,7 @@ struct BackgroundTask {
             } else {
                 print ("Background: Unable to connect?")
                 if previousStatus != Status.NOCONNECTION {
-                    print ("NOTIFICATION: lost connection")
+                    NotificationHandler.raiseNotification(body:"Lost connection with KMP burner")
                     previousStatus = Status.NOCONNECTION
                 }
             }
@@ -84,13 +88,11 @@ struct BackgroundTask {
         } catch {
             print("Exception during BackgroundTask: \(error)")
             if previousStatus != Status.NOCONNECTION {
-                print ("NOTIFICATION: lost connection")
+                NotificationHandler.raiseNotification(body:"Lost connection with KMP burner: \(error)")
                 previousStatus = Status.NOCONNECTION
             }
         }
-        
         print ("backgroundKMPCall completed.")
-
     }
     
 }

@@ -10,6 +10,7 @@ import Foundation
 
 struct SettingsView: View {
     @AppStorage("cfg_burnerHost") var cfg_burnerHost: String = DEFAULTS.BURNER_IP
+    @AppStorage("cfg_useHTTPS") var cfg_useHTTPS: Bool = false
     @AppStorage("cfg_refreshInterval") var cfg_refreshInterval: Double = DEFAULTS.REFRESH
     @AppStorage("cfg_httpTimeout") var cfg_httpTimeout: Double = DEFAULTS.HTTPTIMEOUT
     @AppStorage("cfg_isNotificationEnabled") private var cfg_isNotificationEnabled: Bool = false
@@ -52,6 +53,7 @@ struct SettingsView: View {
                         footer: Text("IP or hostname of the KMP Pellet Burner, as shown in the advanced configuration screen on the device. Do not provide protocol (http://) or a URL.")) {
                     
                     TextField("Burner IP or hostname", text: $cfg_burnerHost)
+                    Toggle("Use HTTPS", isOn: $cfg_useHTTPS)
                 }
                 
                 Section(header: Text("TEST"),
